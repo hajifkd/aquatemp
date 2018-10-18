@@ -1,0 +1,13 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyrebase = "*"
+pit = {git = "https://github.com/yoshiori/pit.git"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
