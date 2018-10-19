@@ -1,10 +1,19 @@
+#!/usr/bin/env python3
+
 import pit
 import pyrebase
 import datetime
 
+DEV_ID = '28-02169177d292'
+
 
 def get_temp():
-    return -1
+    try:
+        with open('/sys/bus/w1/devices/%s/w1_slave' % DEV_ID) as d:
+            temp = float(d.readlines()[-1].strip().split('=')[-1]) / 1000.
+            return temp
+    except:
+        return -1
 
 
 def main():
