@@ -33,7 +33,7 @@ async function showTemps() {
 
     let data = await getData(yesterday, now);
 
-    data = Object.keys(data).map(k => data[k]).sort((a, b) => a.created_at > b.created_at);
+    data = Object.keys(data).map(k => data[k]).sort((a, b) => a.created_at - b.created_at);
     console.log(data);
 
     let chart = document.getElementById("tempChart").getContext('2d');
